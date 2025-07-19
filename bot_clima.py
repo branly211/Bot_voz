@@ -24,7 +24,7 @@ def get_weather(city: str) -> str:
     Retorna:
         str: Información del clima o mensaje de error
     """
-    base_url = f"https://wttr.in/{city}?format=%C+%t"  # URL de solicitud
+    base_url = f"https://wttr.in/{city}?format=%C+%t+%m+%h+%w+%l+%T"  # URL de solicitud
     response = requests.get(base_url)  # Realizar una solicitud GET a la API
     if response.status_code == 200:  # Si la solicitud es exitosa (código 200)
         return response.text.strip()  # Retornar la respuesta en texto sin espa
